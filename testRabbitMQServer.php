@@ -24,7 +24,8 @@ function doLogin($username,$password)
 
 function requestProcessor($request)
 {
-  echo $request['type'].PHP_EOL;
+  echo "----------------------".PHP_EOL;
+  echo $request['type'].PHP_EOL.PHP_EOL;
   var_dump($request);
   if(!isset($request['type']))
   {
@@ -34,7 +35,7 @@ function requestProcessor($request)
   {
     case "Login":
       echo "\n";
-      echo "Log in Request".PHP_EOL;
+      echo "Processing Login Info...".PHP_EOL;
       $responseMessage = doLogin($request['username'],$request['password']);
       break;
     case "validate_session":
